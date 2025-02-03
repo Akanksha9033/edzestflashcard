@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@tailwindcss/postcss": "^4.0.3",
     "bootstrap": "^5.3.3",
     "cra-template": "1.2.0",
     "react": "^19.0.0",
@@ -11,6 +12,7 @@
     "react-icons": "^5.4.0",
     "react-router-dom": "^7.1.5",
     "react-scripts": "5.0.1",
+    "tailwindcss": "^4.0.3",
     "web-vitals": "^4.2.4"
   },
   "scripts": {
@@ -36,5 +38,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "Getting Started with Create React App",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

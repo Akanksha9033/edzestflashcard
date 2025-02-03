@@ -1,0 +1,13 @@
+
+/* Default style for desktop (progress bar takes full width) */
+.progress-bar {
+    width: 100%;
+  }
+  
+  /* For mobile devices (screen width <= 768px), reduce the width of the progress bar */
+  @media (max-width: 768px) {
+    .mobile-progress-bar {
+      width: calc(100% - 30px); /* Adjust the width slightly for mobile */
+    }
+  }
+  

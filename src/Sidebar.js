@@ -5,7 +5,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen, clearScore, darkMode, toggle
     <div
       style={{
         position: "fixed",
-        top: "0",
+        top: "61px",
         right: isSidebarOpen ? "0" : "-250px",
         width: "250px",
         height: "100vh",
