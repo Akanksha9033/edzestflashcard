@@ -7,7 +7,7 @@ const AgileCategories = ({ setCategory }) => {
 
   return (
     <div>
-      <h2>Select an Agile Category</h2>
+     
       <div className="row">
         {agileCategories.map((category, index) => (
           <div className="col-md-4 mb-4" key={index}>

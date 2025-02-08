@@ -6,7 +6,7 @@ const CategorySelection = ({ setCategory }) => {
   
   return (
     <div>
-      <h2>Select a Process Groups Category</h2>
+     
       <div className="row">
         {categories.map((category, index) => (
           <div className="col-md-4 mb-4" key={index}>
@@ -23,3 +23,30 @@ const CategorySelection = ({ setCategory }) => {
 };
 
 export default CategorySelection;
+
+
+// import React from "react";
+
+// const ProcessGroupCategories = ({ setCategory }) => {
+//   const categories = ["Initiating", "Planning", "Executing", "Monitoring and Controlling", "Closing"];
+
+//   return (
+//     <div className="category-selection text-center">
+//       <h2 className="mt-4" style={{ color: "#4748ac" }}>Select a Process Group Category</h2>
+//       <div className="d-flex justify-content-center flex-wrap mt-3">
+//         {categories.map((cat) => (
+//           <button
+//             key={cat}
+//             className="btn btn-primary m-2"
+//             onClick={() => setCategory(cat)}
+//           >
+//             {cat}
+//           </button>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default ProcessGroupCategories;
+

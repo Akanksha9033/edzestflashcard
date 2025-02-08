@@ -34,7 +34,7 @@ const DomainCategories = ({ setCategory }) => {
 
   return (
     <div>
-      <h2>Select a Domain Category</h2>
+     
       <div className="row">
         {domainCategories.map((category, index) => (
           <div className="col-md-4 mb-4" key={index}>

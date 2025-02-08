@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <header className="bg-white shadow-sm sticky-top">
-      <div className="container-fluid px-4 py-2">
+      <div className="container-fluid px-4 py-4">
         <div className="d-flex justify-content-between align-items-center">
           {/* Logo */}
           <div className="d-flex align-items-center">
@@ -24,7 +24,7 @@ const Header = () => {
                 src={Logo}
                 alt="Logo"
                 className="h-18 w-18"
-                style={{ height: '68px', width: '90px' }}
+                style={{ height: '38px', width: '90px' }}
               />
             </Link>
           </div>
@@ -133,8 +133,9 @@ const Header = () => {
               href="https://exams.edzest.org/learn/account/signin"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-primary d-block w-100 mt-3"
+              className="btn btn-primary d-block w-100"
               onClick={closeMenu}
+              style={{marginTop:"10px"}}
             >
               Log In
             </a>

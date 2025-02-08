@@ -182,26 +182,120 @@
 
 
 
+  // import React, { useState, useEffect } from "react";
+  // import { Link, useLocation } from "react-router-dom";
+  // import DomainCategories from "./DomainCategories";
+
+  // const tabs = [
+  //   { id: 1, label: "Flashcards", path: "/" },
+  //   { id: 2, label: "Process Groups", path: "/process-groups" },
+  //   { id: 3, label: "Agile", path: "/agile" },
+  //   { id: 4, label: "Domains", path: "/domains" }, // Added Domains tab
+  // ];
+
+  // const Tabs = ({ category, setCategory }) => {
+  //   const location = useLocation();
+  //   const [selectedTab, setSelectedTab] = useState("Flashcards");
+
+  //   useEffect(() => {
+  //     const currentTab = tabs.find((tab) => tab.path === location.pathname)?.label;
+  //     setSelectedTab(currentTab || "Flashcards");
+  //   }, [location.pathname]);
+
+  //   const renderTabs = () => {
+  //     return tabs.map((tab, index) => {
+  //       if (tab.label === selectedTab || tab.label === "Flashcards") {
+  //         return (
+  //           <React.Fragment key={tab.id}>
+  //             <li className="nav-item">
+  //               <Link
+  //                 className={`nav-link ${location.pathname === tab.path ? "active" : ""}`}
+  //                 to={tab.path}
+  //                 style={{
+  //                   color: "#4748ac",
+  //                   borderColor: location.pathname === tab.path ? "#4748ac" : "",
+  //                 }}
+  //               >
+  //                 {tab.label}
+  //               </Link>
+  //             </li>
+              
+  //               <li className="nav-item mt-2 ml-2">
+  //                 <span style={{ margin: "0 5px", color: "#4748ac" }}>&gt;</span>
+  //               </li>
+              
+  //           </React.Fragment>
+  //         );
+  //       }
+  //       return null;
+  //     });
+  //   };
+
+  //   return (
+  //     <div className="container mt-3">
+  //       <ul className="nav nav-tabs">{renderTabs()}</ul>
+
+  //       {location.pathname === "/" && (
+  //         <div className="mt-4 row justify-content-center gap-3">
+  //           <div className="col-12 col-md-4">
+  //             <Link to="/process-groups" className="card text-center text-decoration-none">
+  //               <div className="card-body" style={{ height: "95px", marginTop: "20px" }}>
+  //                 <h5 style={{ fontSize: "24px" }}>Process Groups</h5>
+  //               </div>
+  //             </Link>
+  //           </div>
+
+  //           <div className="col-12 col-md-4">
+  //             <Link to="/agile" className="card text-center text-decoration-none">
+  //               <div className="card-body" style={{ height: "95px", marginTop: "20px" }}>
+  //                 <h5 className="card-title" style={{ fontSize: "24px" }}>Agile</h5>
+  //               </div>
+  //             </Link>
+  //           </div>
+
+  //           <div className="col-12 col-md-4">
+  //             <Link to="/domains" className="card text-center text-decoration-none">
+  //               <div className="card-body" style={{ height: "95px", marginTop: "20px" }}>
+  //                 <h5 className="card-title" style={{ fontSize: "24px" }}>Domains</h5>
+  //               </div>
+  //             </Link>
+  //           </div>
+  //         </div>
+  //       )}
+
+  //       {location.pathname === "/domains" && !category && (
+  //         <div className="mt-4">
+            
+  //           <DomainCategories setCategory={setCategory} />
+  //         </div>
+  //       )}
+  //     </div>
+  //   );
+  // };
+
+  // export default Tabs;
+
+
   import React, { useState, useEffect } from "react";
   import { Link, useLocation } from "react-router-dom";
   import DomainCategories from "./DomainCategories";
-
+  
   const tabs = [
     { id: 1, label: "Flashcards", path: "/" },
     { id: 2, label: "Process Groups", path: "/process-groups" },
     { id: 3, label: "Agile", path: "/agile" },
     { id: 4, label: "Domains", path: "/domains" }, // Added Domains tab
   ];
-
+  
   const Tabs = ({ category, setCategory }) => {
     const location = useLocation();
     const [selectedTab, setSelectedTab] = useState("Flashcards");
-
+  
     useEffect(() => {
       const currentTab = tabs.find((tab) => tab.path === location.pathname)?.label;
       setSelectedTab(currentTab || "Flashcards");
     }, [location.pathname]);
-
+  
     const renderTabs = () => {
       return tabs.map((tab, index) => {
         if (tab.label === selectedTab || tab.label === "Flashcards") {
@@ -214,27 +308,27 @@
                   style={{
                     color: "#4748ac",
                     borderColor: location.pathname === tab.path ? "#4748ac" : "",
+                    outline: "none", // No outline on focus
                   }}
                 >
                   {tab.label}
                 </Link>
               </li>
-              {index < tabs.length - 1 && location.pathname === tab.path && (
-                <li className="nav-item mt-2 ml-2">
-                  <span style={{ margin: "0 5px", color: "#4748ac" }}>&gt;</span>
-                </li>
-              )}
+              
+              <li className="nav-item mt-2 ml-2">
+                <span style={{ margin: "0 5px", color: "#4748ac" }}>&gt;</span>
+              </li>
             </React.Fragment>
           );
         }
         return null;
       });
     };
-
+  
     return (
       <div className="container mt-3">
         <ul className="nav nav-tabs">{renderTabs()}</ul>
-
+  
         {location.pathname === "/" && (
           <div className="mt-4 row justify-content-center gap-3">
             <div className="col-12 col-md-4">
@@ -244,7 +338,7 @@
                 </div>
               </Link>
             </div>
-
+  
             <div className="col-12 col-md-4">
               <Link to="/agile" className="card text-center text-decoration-none">
                 <div className="card-body" style={{ height: "95px", marginTop: "20px" }}>
@@ -252,7 +346,7 @@
                 </div>
               </Link>
             </div>
-
+  
             <div className="col-12 col-md-4">
               <Link to="/domains" className="card text-center text-decoration-none">
                 <div className="card-body" style={{ height: "95px", marginTop: "20px" }}>
@@ -262,18 +356,15 @@
             </div>
           </div>
         )}
-
-        {location.pathname === "/domains" && !category && (
+  
+        {/* {location.pathname === "/domains" && !category && (
           <div className="mt-4">
-            
             <DomainCategories setCategory={setCategory} />
           </div>
-        )}
+        )} */}
       </div>
     );
   };
-
+  
   export default Tabs;
-
-
-
+  
